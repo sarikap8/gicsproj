@@ -27,3 +27,6 @@ def getinfo():
             print(recordedList1)
             
 getinfo()
+
+#input into a json file to see options in a more clear format 
+#shift alt ctrl L
