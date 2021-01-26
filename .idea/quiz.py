@@ -1,3 +1,24 @@
+# Import package
+import wikipedia
+import re
+import operator
+flower_list= ['Nelumbo nucifera','rose','Bellis perennis']
+flower_dict={}
+lotext=''
+for flower in flower_list:
+    # Specify the title of the Wikipedia page
+    wiki = wikipedia.page(flower)
+    # Extract the plain text content of the page
+    text = wiki.content
+    text = text.replace('\n', '')
+    text = re.sub(r'==.*?==+', '', text)
+    flower_dict[flower]=text
+    print (text)
+    print('=====================================================')
+
+    print ('This is the rap name generator. We hope you enjoy your experience.')
+
+
 color = {
     1:['pink','lotus'] ,
     2:['red','rose'],
@@ -66,11 +87,30 @@ def offer_menu_to_get_list_of_choices(prompt, dictionary): #menu                
 #------------------------------------------
 # Execution starts from here
 
+result_lst =[]
 clr = offer_menu_to_get_list_of_choices("what's your favorite color?", color) # the stuff in parentheses here are the parameters for the menu above
+result_lst.append(clr)
 aml = offer_menu_to_get_list_of_choices("What's your favorite animal?", animal)
-
+result_lst.append(aml)
 fd = offer_menu_to_get_list_of_choices("What's your favorite food?", food)
+result_lst.append(fd)
 sub = offer_menu_to_get_list_of_choices("What's your favorite school subject?", subject)
+result_lst.append(sub)
 dy = offer_menu_to_get_list_of_choices("What's your favorite day of the week?", day)
+result_lst.append(dy)
 
 print ("Your rap name is", clr, aml, fd, sub, dy + '!')
+print (results)
+
+res_count_dict={}
+
+for res in result_lst:
+    if not res in res_count_dict:
+        res_count_dict[res] = 1
+    else:
+        res_count_dict[res] += 1
+
+print(res_count_dict)
+
+
+max_opt=max(res_count_dict.items(), key=operator.itemgetter(1))[0]
