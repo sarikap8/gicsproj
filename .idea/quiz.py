@@ -72,7 +72,7 @@ aml = offer_menu_to_get_list_of_choices("What's your favorite animal?", animal)
 
 fd = offer_menu_to_get_list_of_choices("What's your favorite food?", food)
 sub = offer_menu_to_get_list_of_choices("What's your favorite school subject?", subject)
-dy = offer_menu_to_get_list_of_choices("What's your favorite day of the week?", day)
+du = offer_menu_to_get_list_of_choices("What's your favorite day of the week?", day)
 
 
 
