@@ -1,9 +1,5 @@
 import os
 import requests
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-
-from main import Botany
 
 url = "https://trefle.io/api/v1/plants?token=5-M6tX9TBt0XVNIgKY7d1V26zFEPH8Vm-WoGmZQfaMI"
 
