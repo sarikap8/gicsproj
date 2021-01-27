@@ -106,6 +106,6 @@ print(res_count_dict)
 
 
 max_opt=max(res_count_dict.items(), key=operator.itemgetter(1))[0]
-print("Congratulations, you are most similar to a " + max_opt + "! Here is some information from wikipedia bout your assigned flower")
+print("Congratulations, you are most similar to a " + max_opt + "! Here is some information from wikipedia about your assigned flower")
 getwiki_info(max_opt)
 #get maximum
