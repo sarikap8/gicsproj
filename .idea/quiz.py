@@ -10,6 +10,7 @@ print("Analyzing current flowers, then your quiz will begin! Sit tight!")
 def getwiki_info(flower):
     wiki = wikipedia.page(flower)
     # Extract the plain text content of the page, replacing all non plain text characters
+    text = wiki.content
     text = text.replace('\n', '')
     text = re.sub(r'==.*?==+', '', text)
     flower_dict[flower]=text
