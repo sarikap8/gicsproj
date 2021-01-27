@@ -2,12 +2,8 @@
 import wikipedia
 import re
 import operator
-flower_list= ['Nelumbo nucifera','rose','Bellis perennis']
-flower_text = {
-    "Lotus": "Nelumbo nucifera",
-    "Rose": "rose",
-    "Daisy": "Bellis perennis"
-}
+flower_list= ['Nelumbo nucifera','rose','Bellis perennis', 'Helianthus']
+
 flower_dict={}
 lotext=''
 for flower in flower_list:
@@ -21,8 +17,14 @@ for flower in flower_list:
     print (text)
     print('=====================================================')
 
-    print ('This is the rap name generator. We hope you enjoy your experience.')
 
+
+flower_text = {
+    "lotus": "Nelumbo nucifera",
+    "rose": "rose",
+    "daisy": "Bellis perennis"
+    "sunflower":"Heliantus"
+}
 
 color = {
     1:['pink','lotus'] ,
