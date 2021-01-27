@@ -5,7 +5,7 @@ import operator
 flower_list= ['Nelumbo nucifera','rose','Bellis perennis', 'Helianthus']
 
 flower_dict={}
-lotext=''
+#lotext=''
 for flower in flower_list:
     # Specify the title of the Wikipedia page
     wiki = wikipedia.page(flower)
@@ -22,7 +22,7 @@ for flower in flower_list:
 flower_text = {
     "lotus": "Nelumbo nucifera",
     "rose": "rose",
-    "daisy": "Bellis perennis"
+    "daisy": "Bellis perennis",
     "sunflower":"Heliantus"
 }
 
