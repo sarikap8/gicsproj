@@ -15,7 +15,7 @@ for flower in flower_list:
     text = re.sub(r'==.*?==+', '', text)
     flower_dict[flower]=text
     #print (text)
-    print('=====================================================')
+    #print('=====================================================')
 
 
 flower_text = {
@@ -107,4 +107,6 @@ print(res_count_dict)
 
 
 max_opt=max(res_count_dict.items(), key=operator.itemgetter(1))[0]
+print(max_opt)
+print(flower_dict[max_opt])
 #get maximum
