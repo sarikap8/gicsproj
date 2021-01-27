@@ -1,22 +1,21 @@
-# Import package
+# Import package and api and modules
 import wikipedia
 import re
 import operator
 flower_list= ['Nelumbo nucifera','rose','Bellis perennis', 'Helianthus']
 
 flower_dict={}
-#lotext=''
+
 for flower in flower_list:
     # Specify the title of the Wikipedia page
     wiki = wikipedia.page(flower)
-    # Extract the plain text content of the page
+    # Extract the plain text content of the page, replacing all non plain text characters
     text = wiki.content
     text = text.replace('\n', '')
     text = re.sub(r'==.*?==+', '', text)
     flower_dict[flower]=text
-    print (text)
+    #print (text)
     print('=====================================================')
-
 
 
 flower_text = {
@@ -62,40 +61,28 @@ day= {
 }
 
 
-def offer_menu_to_get_list_of_choices(prompt, dictionary): #menu                                  #parameters in general for the variables; will only run if these parameters are given
+def offer_menu_to_get_list_of_choices(prompt, dictionary): #quiz code that takes in prompts (questions) and dictionaries (of responses) as parameters
 
     print (prompt)
     for key in dictionary:
-        print(key, dictionary[key][0]) # will print the Key and the  first value from the dictionary key-value. Ex : 1: ['water','fresh'] = 1 Water
+        print(key, dictionary[key][0]) #print corresponding options (doesn't print associated flower to user)
 
-    while True: #true loop means that information will always be true #also, because this is a loop, if input does not match key in dictionary, then everything from underneath will run again endlessly
-        menu_choice = input('Enter the Number of Your Choice' + '-> ') #display the prompt; #"input" command means it just takes your answer after displaying prompt
+    while True: #forever loop for error handling: if input does not match key in dictionary, then everything from underneath will run again endlessly
+        menu_choice = input('Enter the Number of Your Choice' + '-> ') #display prompt
 
         try:
-            menu_choice = int(menu_choice) # Your input is considered as string, so convert it to integer to compare with the dictionary keys
-        except ValueError: # try except block is added to handle if the user enters Non-numeric value as input. if you don't have the try except block, when you try to convert the non numeric value to number integer program will fail with following error. ValueError: invalid literal for int() with base 10:
+            menu_choice = int(menu_choice) # convert input to string
+        except ValueError: #error handling exception:
             print("Oops!  'Your input has to be an integer on the list. Try again... ->")
 
-        if menu_choice in list(dictionary.keys()): # after taking the dictionay keys convert it as a list
-            #dictionary.keys() = dict_keys([1, 2, 3, 4, 5, 6])
-            #list(dictionary.keys()) = [1, 2, 3, 4, 5, 6]
-
-            #this command is saying that if the user's input matches a value from the dictionary then do the "return" command in the next step
-            print ('Good Choice!')
+        if menu_choice in list(dictionary.keys()): #convert dictionary into a list and iterate through it
             print('----------------------------')
             return dictionary[menu_choice][1]
-            #get the value (list) for the given key (user input) from the dictionary
-            #[1] gives you the second value from the value list
-            #1:['water','fresh']  will return 'fresh'
-            # Return command return this value to the variable which is calling this function
-        print('Pick one of the choices you were given.') #because this is not indented, this means if the  input (key) does not match a value in the dictionary, then this print statement will appear
+            #get second corresponding value (flower returned that is hidden frmo public. )
+        print('Pick one of the choices you were given.') #error handling
 
-
-#------------------------------------------
-# Execution starts from here
-
-result_lst =[]
-clr = offer_menu_to_get_list_of_choices("what's your favorite color?", color) # the stuff in parentheses here are the parameters for the menu above
+result_lst =[] #list of answers
+clr = offer_menu_to_get_list_of_choices("what's your favorite color?", color) #parameters from above 
 result_lst.append(clr)
 aml = offer_menu_to_get_list_of_choices("What's your favorite animal?", animal)
 result_lst.append(aml)
@@ -106,8 +93,7 @@ result_lst.append(sub)
 dy = offer_menu_to_get_list_of_choices("What's your favorite day of the week?", day)
 result_lst.append(dy)
 
-print ("Your rap name is", clr, aml, fd, sub, dy + '!')
-print (result_lst)
+#print (result_lst) debug
 
 res_count_dict={}
 
@@ -121,5 +107,4 @@ print(res_count_dict)
 
 
 max_opt=max(res_count_dict.items(), key=operator.itemgetter(1))[0]
-
-if max_opt ==
+#get maximum
