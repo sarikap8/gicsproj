@@ -24,7 +24,7 @@ def getinfo():
         image_url = data['image_url']
         recordedList1.append(
             dict({"common_name": common_name, 'scientific_name': scientific_name, 'year': year, 'family_common_name': family_common_name, 'image_url': image_url}))
-            print(recordedList1)
+        print(recordedList1)
             
 getinfo()
 

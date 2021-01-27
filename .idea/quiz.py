@@ -3,6 +3,11 @@ import wikipedia
 import re
 import operator
 flower_list= ['Nelumbo nucifera','rose','Bellis perennis']
+flower_text = {
+    "Lotus": "Nelumbo nucifera",
+    "Rose": "rose",
+    "Daisy": "Bellis perennis"
+}
 flower_dict={}
 lotext=''
 for flower in flower_list:
@@ -100,7 +105,7 @@ dy = offer_menu_to_get_list_of_choices("What's your favorite day of the week?", 
 result_lst.append(dy)
 
 print ("Your rap name is", clr, aml, fd, sub, dy + '!')
-print (results)
+print (result_lst)
 
 res_count_dict={}
 
@@ -114,3 +119,5 @@ print(res_count_dict)
 
 
 max_opt=max(res_count_dict.items(), key=operator.itemgetter(1))[0]
+
+if max_opt ==
