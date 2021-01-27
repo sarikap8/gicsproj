@@ -82,7 +82,7 @@ def offer_menu_to_get_list_of_choices(prompt, dictionary): #quiz code that takes
         print('Pick one of the choices you were given.') #error handling
 
 result_lst =[] #list of answers
-clr = offer_menu_to_get_list_of_choices("what's your favorite color?", color) #parameters from above 
+clr = offer_menu_to_get_list_of_choices("What's your favorite color?", color) #parameters from above
 result_lst.append(clr)
 aml = offer_menu_to_get_list_of_choices("What's your favorite animal?", animal)
 result_lst.append(aml)
