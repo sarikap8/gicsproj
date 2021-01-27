@@ -6,16 +6,14 @@ flower_list= ['Nelumbo nucifera','rose','Bellis perennis', 'Helianthus']
 
 flower_dict={}
 print("Analyzing current flowers, then your quiz will begin! Sit tight!")
-for flower in flower_list:
-    # Specify the title of the Wikipedia page
+#function to get wikipedia info for a given lfower input
+def getwiki_info(flower):
     wiki = wikipedia.page(flower)
     # Extract the plain text content of the page, replacing all non plain text characters
-    text = wiki.content
     text = text.replace('\n', '')
     text = re.sub(r'==.*?==+', '', text)
     flower_dict[flower]=text
-    #print (text)
-    #print('=====================================================')
+    print (text)
 
 
 flower_text = {
@@ -108,5 +106,5 @@ print(res_count_dict)
 
 max_opt=max(res_count_dict.items(), key=operator.itemgetter(1))[0]
 print("Congratulations, you are most similar to a " + max_opt + "! Here is some information from wikipedia bout your assigned flower")
-print(flower_dict[max_opt])
+getwiki_info(max_opt)
 #get maximum
