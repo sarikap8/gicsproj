@@ -5,7 +5,7 @@ import operator
 flower_list= ['Nelumbo nucifera','rose','Bellis perennis', 'Helianthus']
 
 flower_dict={}
-
+print("analyzing current flowers, then your quiz will begin! Sit tight!")
 for flower in flower_list:
     # Specify the title of the Wikipedia page
     wiki = wikipedia.page(flower)
@@ -107,6 +107,6 @@ print(res_count_dict)
 
 
 max_opt=max(res_count_dict.items(), key=operator.itemgetter(1))[0]
-print(max_opt)
+print("Congratulations, you are most similar to a " + max_opt + "! Here is some information from wikipedia bout your assigned flower")
 print(flower_dict[max_opt])
 #get maximum
