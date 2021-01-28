@@ -102,7 +102,7 @@ for res in result_lst:
     else:
         res_count_dict[res] += 1
 
-print(res_count_dict)
+#print(res_count_dict)- #debug
 
 
 max_opt=max(res_count_dict.items(), key=operator.itemgetter(1))[0]
