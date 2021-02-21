@@ -75,7 +75,9 @@ def offer_menu_to_get_list_of_choices(prompt, dictionary): #quiz code that takes
             print("Oops!  'Your input has to be an integer on the list. Try again... ->")
 
         if menu_choice in list(dictionary.keys()): #convert dictionary into a list and iterate through it
-            print('----------------------------')
+            print (list(dictionary.keys()))
+            print ('-----------------------------------')
+
             return dictionary[menu_choice][1]
             #get second corresponding value (flower returned that is hidden frmo public. )
         print('Pick one of the choices you were given.') #error handling
@@ -95,6 +97,7 @@ result_lst.append(dy)
 #print (result_lst) debug
 
 res_count_dict={}
+print(result_lst)
 
 for res in result_lst:
     if not res in res_count_dict:

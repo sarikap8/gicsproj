@@ -3,13 +3,59 @@ import random, copy
 
 app = Flask(__name__)
 
+
+
+flower_text = {
+    "lotus": "Nelumbo nucifera",
+    "rose": "Rose",
+    "daisy": "Bellis perennis",
+    "sunflower":"Heliantus"
+}
+
+color = {
+    'pink':'lotus' ,
+    'red':'rose',
+    'white':'daisy',
+    'blue': 'sunflower'
+
+}
+animal = {
+    'dog': 'sunflower' ,
+    'cat': 'lotus',
+    'shark': 'rose',
+    'bird': 'daisy'
+}
+
+food= {
+    'tacos': 'rose',
+    'spring roll': 'daisy',
+    'pasta': 'sunflower',
+    'pizza': 'lotus'
+}
+
+subject= {
+    'math': 'daisy',
+    'english':'sunflower',
+    'art': 'lotus',
+    'music': 'rose',
+}
+
+day= {
+   'monday': 'daisy' ,
+    'thursday': 'sunflower',
+    'wednesday': 'lotus',
+    'friday': 'rose'
+}
+
+
+
 original_questions = {
     #Format is 'question':[options]
     'color':['pink','red','white','blue'],
-    'animal':['','Beijing','Shanghai','Tianjin'],
-    'food':['Ma\'an Governorate','Amman','Zarqa','Jerash'],
-    'subject':['Cuzco Region','Lima','Piura','Tacna'],
-    'day':['Giza','Suez','Luxor','Tanta']
+    'animal':['dog','cat','shark','bird'],
+    'food':['tacos','spring roll','pasta','pizza'],
+    'subject':['math','english','art','music'],
+    'day':['monday','wednesday','thursday','friday']
 }
 
 questions = copy.deepcopy(original_questions)
@@ -41,10 +87,14 @@ def quiz():
 @app.route('/quiz', methods=['POST'])
 def quiz_answers():
     correct = 0
+    ans_dict={}
     for i in questions.keys():
         answered = request.form[i]
+        print (answered)
+        ans_dict[i] = answered
         if original_questions[i][0] == answered:
             correct = correct+1
+    print (ans_dict)
     return '<h1>Correct Answers: <u>'+str(correct)+'</u></h1>'
 
 if __name__ == '__main__':
