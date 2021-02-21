@@ -2,7 +2,7 @@
 <form action='/quiz' method='POST'>
     <ol>
         {% for i in q %}
-        <li>Where is <u>{{i}}</u> located?</li>
+        <li>What's your favorite <u>{{i}}</u>?</li>
         {% for j in o[i] %}
         <input type='radio' value='{{j}}' name='{{i}}' />{{j}}
         {% endfor %}

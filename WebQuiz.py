@@ -5,8 +5,8 @@ app = Flask(__name__)
 
 original_questions = {
     #Format is 'question':[options]
-    'color':['Agra','New Delhi','Mumbai','Chennai'],
-    'animal':['China','Beijing','Shanghai','Tianjin'],
+    'color':['pink','red','white','blue'],
+    'animal':['','Beijing','Shanghai','Tianjin'],
     'food':['Ma\'an Governorate','Amman','Zarqa','Jerash'],
     'subject':['Cuzco Region','Lima','Piura','Tacna'],
     'day':['Giza','Suez','Luxor','Tanta']
