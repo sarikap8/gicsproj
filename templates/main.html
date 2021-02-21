@@ -1,12 +1,54 @@
-<h1>Take the Quiz</h1>
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<h1>Take the Quiz: What Flower Are You?</h1>
+<body>
 <form action='/quiz' method='POST'>
-    <ol>
+    <div id='quiz'>
+    <ol class='center'>
         {% for i in q %}
         <li>What's your favorite <u>{{i}}</u>?</li>
         {% for j in o[i] %}
         <input type='radio' value='{{j}}' name='{{i}}' />{{j}}
         {% endfor %}
-        {% endfor %}
+        {% endfor %}   
+        </div>
     </ol>
-    <input type="submit" value="submit" />
 </form>
+<input id="submit" type="submit" value="submit" />
+</body>
+
+<style type="text/css">
+   body {
+       background-color: rgba(150, 213, 224, 0.884);
+   }
+   #quiz {
+       color: white;
+       text-align: center;
+   }
+   .center {
+        text-align: center;
+        list-style-position: inside;
+    }
+    #submit {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    
+    h1 {
+        text-align: center;
+        font-family:fantasy;
+    }
+
+    body {
+        background-image: url('flower.jfif');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+</style>
