@@ -19,7 +19,7 @@ def getwiki_info(flower):
 
 flower_text = {
     "lotus": "Nelumbo nucifera",
-    "rose": "rose",
+    "rose": "Rose",
     "daisy": "Bellis perennis",
     "sunflower":"Heliantus"
 }
